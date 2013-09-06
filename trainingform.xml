@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<extension type="plugin" group="content" version="3.2" method="upgrade">
+	<name>Training Form</name>
+	<creationDate>September 2013</creationDate>
+	<author>bloggundog editor</author>
+	<authorEmail>editor@bloggundog.com</authorEmail>
+	<authorUrl>http://www.bloggundog.com</authorUrl>
+	<copyright>This component is released under the GNU/GPLv2 License</copyright>
+	<license>GPL2</license>
+	<version>3.2.0.1</version>
+	<description>Add a traing form in articles.  Based on 'Contact Us Form' by Emme Alfa (http://www.emmealfa.it).</description>
+
+	<files>
+	   <filename plugin="trainingform">trainingform.php</filename>
+		<filename>recaptchalib.php</filename>	   
+	</files>
+	
+	<config>
+	  <fields name="params">
+		<fieldset name="basic">
+		   <field 
+				name="captcha" 
+				type="radio"
+				default="1" 
+				label="Show CAPTCHA" 
+			>
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+		   <field 
+				name="captcha_style" 
+				type="list"
+				default="red" 
+				label="CAPTCHA style" 
+			>
+				<option value="red">red</option>
+				<option value="white">white</option>
+				<option value="blackglass">blackglass</option>
+				<option value="clean">clean</option>				
+			</field>	
+		   <field 
+				name="req_registered" 
+				type="radio"
+				default="1" 
+				label="Registered user required" 
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		   <field 
+				name="linkto_facebook" 
+				type="radio"
+				default="1" 
+				label="Link to Facebook" 
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>			
+		   <field 
+				name="linkto_twitter" 
+				type="radio"
+				default="1" 
+				label="Link to Twitter" 
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+		        </field>
+		   <field name="mytextvalue" type="text" default="Some text" label="Enter some text" description="" size="10" />
+		   <field 
+				name="recaptcha_public" 
+				type="text"
+				default="" 
+				label="Recaptcha Public Key"
+				description=""
+				size="40"
+			/>
+		   <field 
+				name="recaptcha_private" 
+				type="text"
+				default="" 
+				label="Recaptcha Private Key"
+				description=""
+				size="40"
+			/>	
+		</fieldset>
+	  </fields>    
+	</config>		
+
+	<updateservers>
+			<server type="extension" priority="1" name="Training Form Update"><![CDATA[http://www.bloggundog.com/index.php?option=com_ars&view=update&task=stream&format=xml&id=2]]> </server>		   
+	</updateservers>
+		
+	
+</extension>
