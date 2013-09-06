@@ -66,7 +66,7 @@ class plgContentTrainingform extends JPlugin {
 			}
 
 		} else {
-		
+		$html .= include 'inc1.php';
 		$html .= '<div class="plg_contactus_main_div" id="plg_contactus_'.$row->id.'" >';
 		$html .=  '<form action="'. JRoute::_( 'index.php' ).'" method="post" name="emailForm" id="emailForm" class="form-validate">';
 		$html .=  '<div id="write_us_div">';
