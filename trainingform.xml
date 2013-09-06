@@ -8,7 +8,7 @@
 	<copyright>This component is released under the GNU/GPLv2 License</copyright>
 	<license>GPL2</license>
 	<version>3.2.0.1</version>
-	<description>Add a traing form in articles.  Based on 'Contact Us Form' by Emme Alfa (http://www.emmealfa.it).</description>
+	<description>Add a training form in articles.</description>
 
 	<files>
 	   <filename plugin="trainingform">trainingform.php</filename>
@@ -93,10 +93,5 @@
 		</fieldset>
 	  </fields>    
 	</config>		
-
-	<updateservers>
-			<server type="extension" priority="1" name="Training Form Update"><![CDATA[http://www.bloggundog.com/index.php?option=com_ars&view=update&task=stream&format=xml&id=2]]> </server>		   
-	</updateservers>
-		
 	
 </extension>
