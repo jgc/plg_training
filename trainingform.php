@@ -23,7 +23,7 @@ class plgContentTrainingform extends JPlugin {
 		$req_subject = ( $this->params->get('req_subject','1') ) ? ' required' : '' ;  
 		$req_name 	 = ( $this->params->get('req_name','1')    ) ? ' required' : '' ;   		
 	
-		$publickey = ';
+		$publickey = '';
 		$privatekey  = '';	
 
 		$regex = "%\{contactus mailto=([^\{]*)\}%is";
