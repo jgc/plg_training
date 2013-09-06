@@ -8,5 +8,6 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-echo 'moo';
+$dta = "moo";
+return $dta;
 

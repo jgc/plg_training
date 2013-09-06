@@ -12,7 +12,8 @@
 
 	<files>
 	   <filename plugin="trainingform">trainingform.php</filename>
-		<filename>recaptchalib.php</filename>	   
+		<filename>recaptchalib.php</filename>
+		<filename>inc1.php</filename>
 	</files>
 	
 	<config>
