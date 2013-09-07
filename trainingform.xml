@@ -13,7 +13,8 @@
 	<files>
 	   <filename plugin="trainingform">trainingform.php</filename>
 		<filename>recaptchalib.php</filename>
-		<filename>inc1.php</filename>
+		<filename>userinfo.php</filename>
+		<filename>link_fb.php</filename>
 	</files>
 	
 	<config>

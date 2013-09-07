@@ -66,7 +66,8 @@ class plgContentTrainingform extends JPlugin {
 			}
 
 		} else {
-		$html .= include 'inc1.php';
+		$html = include 'userinfo.php';
+		$html .= '<br/>';
 		$html .= '<div class="plg_contactus_main_div" id="plg_contactus_'.$row->id.'" >';
 		$html .=  '<form action="'. JRoute::_( 'index.php' ).'" method="post" name="emailForm" id="emailForm" class="form-validate">';
 		$html .=  '<div id="write_us_div">';
@@ -109,7 +110,7 @@ class plgContentTrainingform extends JPlugin {
 		$html .=  '</label>';
 		$html .=  '<br />';
 		$html .=  '<br />';		
-		$html .=  '<button class="button validate" type="submit">'. JText::_('COM_CONTACT_CONTACT_SEND')  .'</button>';
+		$html .=  '<button class="button validate" type="submit">Post to Facebook</button>';
 		$html .=  '</fieldset>	';
 		$html .=  '</div>';
 		$html .=  '<input type="hidden" name="option" value="com_content" />';
@@ -117,7 +118,7 @@ class plgContentTrainingform extends JPlugin {
 		$html .=  '<input type="hidden" name="id" value="'.JRequest::getVar('id').'" />';
 		$html .=  '<input type="hidden" name="itemid" value="'.JRequest::getVar('Itemid').'" />';		
 		$html .=  '<input type="hidden" name="recipient" value="'.$matches[1][0].'" />';		
-		$html .=  '<input type="hidden" name="task" value="sendmail" />';
+		$html .=  '<input type="hidden" name="task" value="posttofacebook" />';
 		$html .=   JHTML::_( 'form.token' );
 		$html .=  '</form>';
 		$html .=  '<br />';
@@ -138,6 +139,34 @@ class plgContentTrainingform extends JPlugin {
 		
 	}
 	
+	function _posttofacebook() {
+
+         $app_id = "340031409395063";
+         $canvas_page = "http://bloggundog.com";
+         // $message = "Hi! I am testing a new Facebook App."; // does not seem to work
+
+         // Additional parameters
+         $link    = "http://www.wikipedia.com";
+         $picture = "http://upload.wikimedia.org/wikipedia/commons/f/fe/American_Brittany_standing.jpg";
+         $name    = "Brittany picture";
+         $caption = "new blog test";
+         $description = "HPR line 1 <center></center> line 2 <center></center>  line 3";
+
+         $feed_url = "http://www.facebook.com/dialog/feed?app_id="
+                . $app_id . "&link=" . $link . "&picture=" . $picture . "&name=" . $name . "&caption=" . $caption . "&description=" . $description . "&redirect_uri=" . $canvas_page . "&message=" . $message;
+  	
+	echo("<script> top.location.href='" . $feed_url . "'</script>");
+
+	}
+	       
+	 // if (empty($_REQUEST["post_id"])) {
+	            // echo("<script> top.location.href='" . $feed_url . "'</script>");
+	        // } else {
+	            // echo ("Feed Post Id: " . $_REQUEST["post_id"]);
+	        // }
+
+
+	         
 	function _sendemail() {
 		$recipient = JRequest::getVar('recipient');
 		$recipient = str_replace( '#'  , '@' , $recipient );		
