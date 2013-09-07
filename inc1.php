@@ -8,6 +8,9 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-$dta = "moo";
-return $dta;
+$user = JFactory::getUser();
+$userinfo .= '<p>Welcome {$user->name}, (your email is {$user->email}, and username {$user->username}</p>';
+// echo "<p>Your usertype is {$user->usertype} which has a group id of {$user->gid}.</p>";
+
+return $userinfo;
 
